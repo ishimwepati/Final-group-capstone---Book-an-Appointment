@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavigationPanel from './components/NavigationPanel';
+import MotorcycleList from './components/MotorcycleList';
+import './App.css'; // Create an App.css file for styling
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <Router>
+    <div className="app-container">
+      <NavigationPanel />
+      <Routes>
+        <Route path="/" element={<MotorcycleList />} />
+      </Routes>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;

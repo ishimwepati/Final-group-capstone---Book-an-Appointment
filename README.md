@@ -84,7 +84,7 @@ Our team of four used a special Kanban board to split up tasks and see how thing
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo
+## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link]()
 

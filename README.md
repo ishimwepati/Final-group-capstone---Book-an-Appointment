@@ -137,13 +137,6 @@ To execute tests, use the command below:
 ```
   npm test
 ```
-
-### Deployment
-
-You can deploy this project using: GitHub Pages.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>

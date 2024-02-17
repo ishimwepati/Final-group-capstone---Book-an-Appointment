@@ -10,32 +10,32 @@ const NavigationPanel = () => (
     <nav>
       <ul>
         <li>
-          <NavLink to="/" activeclassname="active">
+          <NavLink to="/" activeClassName="active">
             Motorcycles
           </NavLink>
         </li>
         <li>
-          <NavLink to="/reserve" activeclassname="active">
+          <NavLink to="/reserve" activeClassName="active">
             Reserve
           </NavLink>
         </li>
         <li>
-          <NavLink to="/my-reservations" activeclassname="active">
+          <NavLink to="/my-reservations" activeClassName="active">
             My Reservations
           </NavLink>
         </li>
         <li>
-          <NavLink to="/add-motorcycle" activeclassname="active">
+          <NavLink to="/add-motorcycle" activeClassName="active">
             Add Motorcycle
           </NavLink>
         </li>
         <li>
-          <NavLink to="/delete-motorcycle" activeclassname="active">
+          <NavLink to="/delete-motorcycle" activeClassName="active">
             Delete Motorcycle
           </NavLink>
         </li>
         <li>
-          <NavLink to="/sign-out" activeclassname="active">
+          <NavLink to="/sign-out" activeClassName="active">
             Sign out
           </NavLink>
         </li>

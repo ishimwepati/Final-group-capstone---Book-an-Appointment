@@ -1,0 +1,21 @@
+.reservations-container {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+}
+
+h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #97bf0f;
+  width: 80%;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin: 0 auto;
+}

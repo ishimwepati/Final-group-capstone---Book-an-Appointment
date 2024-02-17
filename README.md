@@ -56,7 +56,7 @@
 
 - **Users can reserve items based on the date and city.**
 
-- **Users have the ability to remove items they added."**
+- **Users have the ability to remove items they added.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -56,7 +56,7 @@
 
 - **Users can reserve items based on the date and city.**
 
-- **Users have the ability to remove items they added."**
+- **Users have the ability to remove items they added.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,7 +84,7 @@ Our team of four used a special Kanban board to split up tasks and see how thing
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo
+## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link]()
 
@@ -137,13 +137,6 @@ To execute tests, use the command below:
 ```
   npm test
 ```
-
-### Deployment
-
-You can deploy this project using: GitHub Pages.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>

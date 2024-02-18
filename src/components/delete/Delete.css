@@ -1,0 +1,39 @@
+.delete-container {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+}
+
+.delete-container h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.delete-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #97bf0f;
+  width: 80%;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin: 0 auto;
+}
+
+.delete-div p {
+  font-size: 20px;
+}
+
+.delete-button {
+  color: #fff;
+  font-size: 20px;
+  background-color: #d11a2a;
+  padding: 12px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #a50b18;
+}

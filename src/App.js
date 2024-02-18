@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationPanel from './components/NavigationPanel';
-import MotorcycleList from './components/MotorcycleList';
+import MotorcycleList from './components/main/MotorcycleList';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
 import Details from './components/details/Details';

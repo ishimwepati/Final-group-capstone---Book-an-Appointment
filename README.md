@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./src/" alt=""/>
+  <img src="./src/images/logo.png" alt="Motorcycle"/>
   <h2><b> SwiftBike Reserves </b></h2>
 </div>
 
@@ -137,6 +137,7 @@ To execute tests, use the command below:
 ```
   npm test
 ```
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>

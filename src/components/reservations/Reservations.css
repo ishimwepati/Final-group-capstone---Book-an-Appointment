@@ -4,7 +4,7 @@
   margin-left: 20%;
 }
 
-h2 {
+.reservations-container h2 {
   text-align: center;
   margin: 15px 0;
 }
@@ -18,4 +18,8 @@ h2 {
   padding: 12px 10px;
   border-radius: 7px;
   margin: 0 auto;
+}
+
+.row p {
+  font-size: 20px;
 }

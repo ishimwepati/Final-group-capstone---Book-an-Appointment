@@ -6,7 +6,7 @@ const MotorcycleList = () => (
   <div className="motorcycle-list-container">
     <div className="carousel-container">
       <FaChevronLeft className="carousel-arrow" />
-      <p className="no-items-message">No items right now</p>
+      <p className="no-items-message">Itemes will be added shortly</p>
       <FaChevronRight className="carousel-arrow" />
     </div>
   </div>

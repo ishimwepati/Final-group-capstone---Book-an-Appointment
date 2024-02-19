@@ -13,6 +13,11 @@
   border-right: 2px solid rgba(237, 224, 224, 0.888);
 }
 
+.navigation-panel h5 {
+  text-align: center;
+  color: #97bf0f;
+}
+
 .navigation-panel nav {
   display: flex;
   flex-direction: column;
@@ -25,7 +30,7 @@
 }
 
 .navigation-panel li {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .navigation-panel a {

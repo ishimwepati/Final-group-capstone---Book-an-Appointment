@@ -5,6 +5,7 @@ import MotorcycleList from './components/main/MotorcycleList';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
 import Details from './components/details/Details';
+import ReserveForm from './components/reservations/ReserveForm';
 
 const App = () => (
   <Router>
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/my-reservations" element={<Reservations />} />
         <Route path="/delete-motorcycle" element={<Delete />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/reserve-form" element={<ReserveForm />} />
       </Routes>
     </div>
   </Router>

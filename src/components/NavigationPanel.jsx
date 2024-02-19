@@ -7,6 +7,7 @@ import logo from '../images/logo.png';
 const NavigationPanel = () => (
   <div className="navigation-panel">
     <img src={logo} alt="Logo" className="logo" />
+    <h5>SwiftBike Reserves</h5>
     <nav>
       <ul>
         <li>

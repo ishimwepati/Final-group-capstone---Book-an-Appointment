@@ -1,0 +1,112 @@
+.app {
+  display: grid;
+  grid-template-rows: inherit;
+  grid-template-columns: auto;
+
+  /* background-color: rgb(161, 55, 73); */
+  height: inherit;
+}
+
+.flexV {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexH {
+  display: flex;
+}
+
+.logoutContainer {
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  align-self: self-start;
+  border-radius: 16px;
+}
+
+.success {
+  color: #97bf11;
+}
+
+.infoContainer {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+#infoLogin {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.appContainer {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 15fr 85fr;
+  grid-template-rows: 100fr;
+}
+
+.mainContainer {
+  height: 100vh;
+}
+
+.messageContainer {
+  margin-top: 4rem;
+  margin-left: 1%;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: fit-content;
+  background-color: rgb(64, 92, 64);
+  border-radius: 20px;
+}
+
+.messageContainer .content {
+  padding: 0.3rem;
+  color: white;
+}
+
+.hamburguerContainer {
+  position: fixed;
+  top: 0;
+  width: 20%;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 20px;
+  z-index: 6000;
+  display: block;
+}
+
+.infoContainer {
+  margin-top: 8rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 20px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburguerContainer {
+    display: none;
+  }
+
+  .infoContainer {
+    margin-top: 2rem;
+    font-size: 30px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .controlVisibility {
+    display: block;
+  } */
+}

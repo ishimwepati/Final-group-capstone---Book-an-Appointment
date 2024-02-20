@@ -11,7 +11,7 @@ const NavigationPanel = () => (
     <nav>
       <ul>
         <li>
-          <NavLink to="/" activeClassName="active">
+          <NavLink to="/motorcycles" activeClassName="active">
             Motorcycles
           </NavLink>
         </li>
@@ -36,7 +36,7 @@ const NavigationPanel = () => (
           </NavLink>
         </li>
         <li>
-          <NavLink to="/sign-out" activeClassName="active">
+          <NavLink to="/login" activeClassName="active">
             Sign out
           </NavLink>
         </li>

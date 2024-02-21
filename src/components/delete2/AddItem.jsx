@@ -1,9 +1,9 @@
 import React from 'react';
 import './Delete.css';
 
-const Delete2 = () => (
+const AddItem = () => (
   <div className="delete-container">
-    <h2>Delete motorcycle</h2>
+    <h2>Add Motorcycle</h2>
     <div className="delete-div">
       <p>Motorcycle name</p>
       <button type="button" className="delete-button">
@@ -13,4 +13,4 @@ const Delete2 = () => (
   </div>
 );
 
-export default Delete2;
+export default AddItem;

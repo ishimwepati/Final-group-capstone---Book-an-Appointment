@@ -3,6 +3,15 @@
 import React, { useState } from 'react';
 import './AddItem.css';
 
+const countryOptions = [
+  'Afghanistan',
+  'Albania',
+  'Algeria',
+  'DRCongo',
+  'Nigeria',
+  'SouthAfrica',
+];
+
 const AddItem = () => {
   const [motorcycleData, setMotorcycleData] = useState({
     name: '',
@@ -64,12 +73,18 @@ const AddItem = () => {
         </label>
         <label htmlFor="motorcycleMadeCountry">
           Motorcycle Made Country:
-          <input
-            type="text"
+          <select
             id="motorcycleMadeCountry"
             value={motorcycleData.madeCountry}
             onChange={(e) => setMotorcycleData({ ...motorcycleData, madeCountry: e.target.value })}
-          />
+          >
+            <option value="">Select Country</option>
+            {countryOptions.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
         </label>
         <button type="button" className="add-button" onClick={handleAddMotorcycle}>
           Add Motorcycle

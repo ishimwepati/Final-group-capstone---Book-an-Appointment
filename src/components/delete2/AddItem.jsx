@@ -7,7 +7,7 @@ const AddItem = () => (
     <div className="delete-div">
       <p>Motorcycle name</p>
       <button type="button" className="delete-button">
-        Delete
+        AddMotocycle
       </button>
     </div>
   </div>

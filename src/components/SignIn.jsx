@@ -48,7 +48,6 @@ const SignIn = () => {
 
       <div>
         <button type="submit">Login</button>
-        Or
         <button
           type="button"
           onClick={() => {

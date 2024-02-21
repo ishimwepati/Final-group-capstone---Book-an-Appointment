@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import MotorcycleList from './components/main/MotorcycleList';
+import AddMotorcycle from './components/main/AddMotorcycle';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
 import Details from './components/details/Details';
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/" element={<SignIn />} />
         <Route exact path="/login" element={<SignIn />} />
         <Route exact path="/motorcycles" element={<MotorcycleList />} />
+        <Route exact path="/add-motorcycle" element={<AddMotorcycle />} />
         <Route exact path="/my-reservations" element={<Reservations />} />
         <Route exact path="/delete-motorcycle" element={<Delete />} />
         <Route exact path="/details" element={<Details />} />

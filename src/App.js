@@ -6,6 +6,7 @@ import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
 import Details from './components/details/Details';
 import ReserveForm from './components/reservations/ReserveForm';
+import additem from './components/additem/additem';
 
 const App = () => (
   <Router>

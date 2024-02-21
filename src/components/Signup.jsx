@@ -10,7 +10,7 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    role: 'user', // Set default role to 'user'
+    role: 'user',
   });
 
   const handleSubmit = (e) => {
@@ -20,95 +20,89 @@ const Signup = () => {
       name: '',
       email: '',
       password: '',
-      role: 'user', // Reset role to 'user' after signup
+      role: 'user',
     });
     navigate('/login');
   };
 
   return (
-    <section>
-      <div>
+    <section className="container mt-5">
+      <div
+        className="card p-4"
+        style={{ border: '1.4px solid #000', borderRadius: '7px' }}
+      >
+        <h2 className="text-center mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">
-              Name
-              <br />
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={newUser.name}
-                required
-                onChange={(e) => {
-                  setNewUser({
-                    ...newUser,
-                    name: e.target.value,
-                  });
-                }}
-              />
-            </label>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              value={newUser.name}
+              required
+              onChange={(e) => {
+                setNewUser({
+                  ...newUser,
+                  name: e.target.value,
+                });
+              }}
+            />
           </div>
 
-          <div>
-            <label htmlFor="email">
-              Email
-              <br />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={newUser.email}
-                required
-                onChange={(e) => {
-                  setNewUser({
-                    ...newUser,
-                    email: e.target.value,
-                  });
-                }}
-              />
-            </label>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              value={newUser.email}
+              required
+              onChange={(e) => {
+                setNewUser({
+                  ...newUser,
+                  email: e.target.value,
+                });
+              }}
+            />
           </div>
 
-          <div>
-            <label htmlFor="password">
-              Password
-              <br />
-              <input
-                type="password"
-                name="password"
-                id="password"
-                value={newUser.password}
-                required
-                onChange={(e) => {
-                  setNewUser({ ...newUser, password: e.target.value });
-                }}
-              />
-            </label>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              value={newUser.password}
+              required
+              onChange={(e) => {
+                setNewUser({ ...newUser, password: e.target.value });
+              }}
+            />
           </div>
 
-          <div>
-            <label htmlFor="role">
-              <h4>Role</h4>
-              <select
-                name="role"
-                id="role"
-                value={newUser.role}
-                onChange={(e) => {
-                  setNewUser({ ...newUser, role: e.target.value });
-                }}
-              >
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
-            </label>
+          <div className="form-group">
+            <label htmlFor="role">Role</label>
+            <select
+              className="form-control"
+              id="role"
+              value={newUser.role}
+              onChange={(e) => {
+                setNewUser({ ...newUser, role: e.target.value });
+              }}
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
           </div>
 
-          <div>
-            <button id="signUp" type="submit">
+          <div className="text-center">
+            <button className="btn btn-primary" type="submit">
               Sign up
             </button>
-            Or
+            <span className="mx-2">Or</span>
             <button
+              className="btn btn-secondary"
               onClick={() => {
                 navigate('/login');
               }}

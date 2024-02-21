@@ -1,6 +1,7 @@
 // Signup.js
 
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Signup = ({ onSignup }) => {
   const [username, setUsername] = useState('');
@@ -20,17 +21,33 @@ const Signup = ({ onSignup }) => {
   return (
     <div>
       <h2>Signup</h2>
-      <label>
+      <label htmlFor="username">
         Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
       </label>
-      <label>
+      <label htmlFor="password">
         Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </label>
-      <button onClick={handleSignup}>Signup</button>
+      <button type="button" onClick={handleSignup}>
+        Signup
+      </button>
     </div>
   );
+};
+
+Signup.propTypes = {
+  onSignup: PropTypes.func.isRequired,
 };
 
 export default Signup;

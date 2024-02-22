@@ -4,6 +4,7 @@ import NavigationPanel from './components/NavigationPanel';
 import MotorcycleList from './components/main/MotorcycleList';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
+import AddItem from './components/delete2/AddItem';
 import Details from './components/details/Details';
 import ReserveForm from './components/reservations/ReserveForm';
 
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/" element={<MotorcycleList />} />
         <Route path="/my-reservations" element={<Reservations />} />
         <Route path="/delete-motorcycle" element={<Delete />} />
+        <Route path="/add-motorcycle" element={<AddItem />} />
         <Route path="/details" element={<Details />} />
         <Route path="/reserve-form" element={<ReserveForm />} />
       </Routes>

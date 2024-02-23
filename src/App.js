@@ -1,27 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavigationPanel from './components/NavigationPanel';
+import { Route, Routes } from 'react-router-dom';
+import SignIn from './components/SignIn';
 import MotorcycleList from './components/main/MotorcycleList';
+import AddMotorcycle from './components/main/AddMotorcycle';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
 import AddItem from './components/delete2/AddItem';
 import Details from './components/details/Details';
 import ReserveForm from './components/reservations/ReserveForm';
+import Signup from './components/Signup';
 
 const App = () => (
-  <Router>
-    <div className="app-container">
-      <NavigationPanel />
+  <div className="app">
+    <div id="mainContainer">
       <Routes>
-        <Route path="/" element={<MotorcycleList />} />
-        <Route path="/my-reservations" element={<Reservations />} />
-        <Route path="/delete-motorcycle" element={<Delete />} />
-        <Route path="/add-motorcycle" element={<AddItem />} />
-        <Route path="/details" element={<Details />} />
-        <Route path="/reserve-form" element={<ReserveForm />} />
+        <Route exact path="/" element={<SignIn />} />
+        <Route exact path="/login" element={<SignIn />} />
+        <Route exact path="/motorcycles" element={<MotorcycleList />} />
+        <Route exact path="/add-motorcycle" element={<AddMotorcycle />} />
+        <Route exact path="/my-reservations" element={<Reservations />} />
+        <Route exact path="/delete-motorcycle" element={<Delete />} />
+        <Route exact path="/details" element={<Details />} />
+        <Route exact path="/reserve" element={<ReserveForm />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </div>
-  </Router>
+  </div>
 );
 
 export default App;

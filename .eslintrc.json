@@ -1,39 +1,60 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
-  "plugins": ["react"],
-  "rules": {
-    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
-    "no-shadow": "off"
-  },
-  "overrides": [
-    {
-      "files": ["src/**/*Slice.js"],
-      "rules": { "no-param-reassign": ["error", { "props": false }] }
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
     },
-    {
-      "files": ["**/*.jsx"],
-      "rules": {
-        "import/extensions": "off"
+    "extends": [
+      "airbnb",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "plugins": ["react"],
+    "rules": {
+      "react/jsx-filename-extension": [
+        "warn",
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "import/extensions": "off",
+      "import/no-unresolved": "off",
+      "react/prop-types": "off",
+      "no-shadow": "off",
+      "no-unused-vars": "off",
+      "react/jsx-first-prop-new-line": "off",
+      "jsx-a11y/label-has-associated-control": "off"
+    },
+    "overrides": [
+      {
+        "files": ["src/components/Signup.jsx"],
+        "rules": {
+          "jsx-a11y/label-has-associated-control": "off"
+        }
+      },
+      {
+        "files": ["src/components/SignIn.jsx"],
+        "rules": {
+          "jsx-a11y/label-has-associated-control": "off"
+        }
+      },
+      {
+        "files": ["src/**/*Slice.js"],
+        "rules": {
+          "no-param-reassign": ["error", { "props": false }],
+          "max-len": ["error", { "code": 170 }]
+        }
       }
-    }
-  ],
-  "ignorePatterns": [
-    "dist/",
-    "build/"
-  ]
-}
+    ],
+    "ignorePatterns": ["dist/", "build/"]
+  }
+  

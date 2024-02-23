@@ -4,7 +4,7 @@ import NavigationPanel from './components/NavigationPanel';
 import MotorcycleList from './components/main/MotorcycleList';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
-import AddItem from './components/delete2/AddItem';
+import AddItem from './components/additem/AddItem';
 import Details from './components/details/Details';
 import ReserveForm from './components/reservations/ReserveForm';
 

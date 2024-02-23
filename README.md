@@ -144,8 +144,8 @@ To execute tests, use the command below:
 
 👤 **Ishimwe JOSEPH WazaCode**
 
-- GitHub: [@githubhandle](https://github.com/ishimwepati)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ishimwe-joseph-patient-0537b4155/)
+- GitHub: [@IshimwePati](https://github.com/ishimwepati)
+- LinkedIn: [Ishimwe Joseph](https://www.linkedin.com/in/ishimwe-joseph-patient-0537b4155/)
 
 👤 **Ye Min Thu**
 

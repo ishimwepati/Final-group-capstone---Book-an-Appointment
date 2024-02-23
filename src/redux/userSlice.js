@@ -45,7 +45,6 @@ const userSlice = createSlice({
         }
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log(action.payload.token);
         state.message = action.payload.message;
         state.isLoading = false;
         if (action.payload?.error) {

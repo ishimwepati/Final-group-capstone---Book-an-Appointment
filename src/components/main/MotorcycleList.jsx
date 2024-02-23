@@ -11,14 +11,13 @@ const MotorcycleList = () => {
   const authorization = useSelector((state) => state.user.requestHeader);
   const dispatch = useDispatch();
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
-  console.log(motorcycles);
   useEffect(() => {
     if (authorization) {
       dispatch(getMotorcycles(authorization));
     }
   }, [authorization, dispatch]);
 
-  if (!currentUser) return (<Navigate to="/login" />);
+  if (!currentUser) return <Navigate to="/login" />;
 
   return (
     <>
@@ -26,18 +25,26 @@ const MotorcycleList = () => {
       <div className="motorcycle-list-container">
         <div className="carousel-container">
           <FaChevronLeft className="carousel-arrow" />
-          {motorcycles.length === 0 ? (
+          {motorcycles && motorcycles.length === 0 ? (
             <p className="no-items-message">No motorcycles found</p>
           ) : (
             <ul className="motorcycle-list">
-              {motorcycles.map((motorcycle) => (
-                <li key={motorcycle.id} className="motorcycle-item">
-                  <div className="motorcycle-details">
-                    <h3 className="motorcycle-name">{motorcycle.motorcycle_name}</h3>
-                    <p className="motorcycle-description">{motorcycle.description}</p>
-                  </div>
-                </li>
-              ))}
+              {motorcycles
+                && motorcycles.map((motorcycle) => (
+                  <li key={motorcycle.id} className="motorcycle-item">
+                    <div className="motorcycle-details">
+                      <h3 className="motorcycle-name">
+                        {motorcycle.motorcycle_name}
+                      </h3>
+                      <p className="motorcycle-description">
+                        {motorcycle.description}
+                      </p>
+                      <p className="motorcycle-description">
+                        {motorcycle.image}
+                      </p>
+                    </div>
+                  </li>
+                ))}
             </ul>
           )}
           <FaChevronRight className="carousel-arrow" />

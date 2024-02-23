@@ -36,8 +36,14 @@
 }
 
 .infoContainer {
-  margin-top: 1rem;
   flex-wrap: wrap;
+  margin-top: 8rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 20px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 #infoLogin {
@@ -81,16 +87,6 @@
   font-size: 20px;
   z-index: 6000;
   display: block;
-}
-
-.infoContainer {
-  margin-top: 8rem;
-  padding: 1rem;
-  text-align: center;
-  font-size: 20px;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
 }
 
 @media screen and (min-width: 768px) {

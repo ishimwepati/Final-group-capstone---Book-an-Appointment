@@ -10,7 +10,6 @@ const AddMotorcycle = () => {
   const authorization = useSelector((state) => state.user.requestHeader);
   const dispatch = useDispatch();
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
-  console.log(motorcycles);
   useEffect(() => {
     if (authorization) {
       dispatch(getMotorcycles(authorization));
@@ -22,9 +21,7 @@ const AddMotorcycle = () => {
   return (
     <>
       <NavigationPanel />
-      <div className="motorcycle-list-container">
-        Add your motorcylces
-      </div>
+      <div className="motorcycle-list-container">Add your motorcylces</div>
     </>
   );
 };

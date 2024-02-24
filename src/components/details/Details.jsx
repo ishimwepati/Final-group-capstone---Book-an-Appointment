@@ -26,7 +26,13 @@ const Details = () => {
 
   const motorcycle = motorcycles.find((m) => m.id.toString() === motorcycleId);
 
-  useEffect(() => {}, [motorcycle]);
+  useEffect(() => {
+    console.log('Motorcycle:', motorcycle);
+  }, [motorcycle]);
+
+  const handleReservationClick = () => {
+    console.log('Make Reservation Clicked');
+  };
 
   return (
     <>
@@ -52,7 +58,16 @@ const Details = () => {
               </tbody>
             </table>
           )}
-          <Link to="/reserve" className="reservation-button">
+          <Link
+            to={{
+              pathname: '/reserve',
+              state: {
+                userName: currentUser.username,
+                motorcycleName: motorcycle ? motorcycle.make : '',
+              },
+            }}
+            className="reservation-button"
+          >
             Make Reservation
           </Link>
         </div>

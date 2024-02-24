@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ReserveForm.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import NavigationPanel from '../NavigationPanel';
 import { addReservation } from '../../redux/reserveSlice';
 import { getMotorcycles } from '../../redux/motorcycleSlice';
@@ -11,6 +11,7 @@ const ReserveForm = () => {
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
   const authorization = useSelector((state) => state.user.requestHeader);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     if (authorization) {
@@ -18,12 +19,31 @@ const ReserveForm = () => {
     }
   }, [authorization, dispatch]);
 
+  const { state } = location;
+  const { userName, motorcycleName } = state || {};
+
   const [formData, setFormData] = useState({
+    user_name: userName || (currentUser ? currentUser.name : ''),
     reserve_date: '',
     motorcycle_id: '',
     city: '',
     reserve_time: '',
+    selectedMotorcycle: motorcycleName || '',
   });
+
+  useEffect(() => {
+    if (motorcycleName) {
+      const selectedMotorcycle = motorcycles.find(
+        (m) => m.make === motorcycleName,
+      );
+      if (selectedMotorcycle) {
+        setFormData((prevData) => ({
+          ...prevData,
+          motorcycle_id: String(selectedMotorcycle.id),
+        }));
+      }
+    }
+  }, [motorcycles, motorcycleName]);
 
   const [message, setMessage] = useState('');
 
@@ -67,8 +87,7 @@ const ReserveForm = () => {
             type="text"
             id="user_name"
             name="user_name"
-            value={formData.name}
-            onChange={handleChange}
+            value={formData.user_name}
             readOnly
           />
           <label htmlFor="date">Select your date:</label>
@@ -94,6 +113,7 @@ const ReserveForm = () => {
             value={formData.motorcycle_id}
             onChange={handleChange}
           >
+            <option value="">Select a motorcycle</option>
             {motorcycles.map((motorcycle) => (
               <option key={motorcycle.id} value={motorcycle.id}>
                 {motorcycle.make}

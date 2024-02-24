@@ -5,7 +5,7 @@
   justify-content: center;
   padding: 20px;
   width: 80%;
-  height: 100vh;
+  height: auto;
   margin-left: 20%;
   background-color: #8fbc01;
 }
@@ -46,6 +46,7 @@ select {
   padding: 10px;
   background-color: #97bf0f;
   border: 1.5px solid #ccc;
+  outline: none;
   color: #fff;
   border-radius: 7px;
   cursor: pointer;

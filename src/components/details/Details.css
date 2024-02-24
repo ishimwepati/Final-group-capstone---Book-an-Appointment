@@ -23,12 +23,7 @@
   border: 1px solid #ddddddd8;
   padding: 8px;
   text-align: left;
-}
-
-.table th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  font-weight: bold;
 }
 
 .reservation-button {

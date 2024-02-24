@@ -1,6 +1,5 @@
-// AddItem.jsx
-
 import React, { useState } from 'react';
+import axios from 'axios';
 import './AddItem.css';
 
 const countryOptions = [
@@ -14,78 +13,54 @@ const countryOptions = [
 
 const AddItem = () => {
   const [motorcycleData, setMotorcycleData] = useState({
-    name: '',
+    description: '',
     color: '',
-    weight: '',
-    madeDate: '',
-    madeCountry: '',
+    image: '', // Add image if needed
+    license_plate: '',
+    available: true,
+    price: 0.0,
+    make: '',
+    model: '',
+    year: '',
   });
 
   const handleAddMotorcycle = () => {
-    setMotorcycleData({
-      name: '',
-      color: '',
-      weight: '',
-      madeDate: '',
-      madeCountry: '',
-    });
+    axios.post('http://your-rails-api-url/api/v1/motorcycles', { motorcycle: motorcycleData })
+      .then(response => {
+        console.log('Motorcycle added successfully:', response.data);
+        // Add any additional logic or feedback to the user
+        setMotorcycleData({
+          description: '',
+          color: '',
+          image: '',
+          license_plate: '',
+          available: true,
+          price: 0.0,
+          make: '',
+          model: '',
+          year: '',
+        });
+      })
+      .catch(error => {
+        console.error('Error adding motorcycle:', error);
+        // Handle errors or provide feedback to the user
+      });
   };
 
   return (
     <div className="add-container">
       <h2>Add Motorcycle</h2>
       <div className="add-div">
-        <label htmlFor="motorcycleName">
-          Motorcycle Name:
+        <label htmlFor="motorcycleDescription">
+          Motorcycle Description:
           <input
             type="text"
-            id="motorcycleName"
-            value={motorcycleData.name}
-            onChange={(e) => setMotorcycleData({ ...motorcycleData, name: e.target.value })}
+            id="motorcycleDescription"
+            value={motorcycleData.description}
+            onChange={(e) => setMotorcycleData({ ...motorcycleData, description: e.target.value })}
           />
         </label>
-        <label htmlFor="motorcycleColor">
-          Motorcycle Color:
-          <input
-            type="text"
-            id="motorcycleColor"
-            value={motorcycleData.color}
-            onChange={(e) => setMotorcycleData({ ...motorcycleData, color: e.target.value })}
-          />
-        </label>
-        <label htmlFor="motorcycleWeight">
-          Motorcycle Weight:
-          <input
-            type="text"
-            id="motorcycleWeight"
-            value={motorcycleData.weight}
-            onChange={(e) => setMotorcycleData({ ...motorcycleData, weight: e.target.value })}
-          />
-        </label>
-        <label htmlFor="motorcycleMadeDate">
-          Motorcycle Made Date:
-          <input
-            type="date"
-            id="motorcycleMadeDate"
-            value={motorcycleData.madeDate}
-            onChange={(e) => setMotorcycleData({ ...motorcycleData, madeDate: e.target.value })}
-          />
-        </label>
-        <label htmlFor="motorcycleMadeCountry">
-          Motorcycle Made Country:
-          <select
-            id="motorcycleMadeCountry"
-            value={motorcycleData.madeCountry}
-            onChange={(e) => setMotorcycleData({ ...motorcycleData, madeCountry: e.target.value })}
-          >
-            <option value="">Select Country</option>
-            {countryOptions.map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </label>
+        {/* Include other input fields as needed */}
         <button type="button" className="add-button" onClick={handleAddMotorcycle}>
           Add Motorcycle
         </button>

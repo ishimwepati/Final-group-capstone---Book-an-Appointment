@@ -10,25 +10,30 @@
 }
 
 .delete-div {
+  margin: 0 15px;
+}
+
+.delete-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 2px solid #97bf0f;
-  width: 80%;
-  padding: 12px 10px;
+  padding: 12px;
   border-radius: 7px;
-  margin: 0 auto;
+  margin: 12px 0;
+  background-color: #fffb;
 }
 
-.delete-div p {
+.delete-card p {
   font-size: 20px;
+  text-align: center;
 }
 
 .delete-button {
   color: #fff;
   font-size: 20px;
   background-color: #d11a2a;
-  padding: 12px 10px;
+  padding: 10px 12px;
   border: none;
   cursor: pointer;
   border-radius: 5px;

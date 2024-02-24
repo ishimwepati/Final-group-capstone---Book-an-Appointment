@@ -23,3 +23,23 @@
 .carousel-arrow:hover {
   color: #afe304;
 }
+
+.motorcycle-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.motorcycle-item {
+  width: 30%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .motorcycle-item {
+    width: 100%;
+  }
+}

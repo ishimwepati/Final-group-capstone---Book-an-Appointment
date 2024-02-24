@@ -62,6 +62,15 @@ const ReserveForm = () => {
         </p>
         {message && <p>{message}</p>}
         <form className="reservation-form" onSubmit={handleSubmit}>
+          <label htmlFor="user_name">Your Name:</label>
+          <input
+            type="text"
+            id="user_name"
+            name="user_name"
+            value={formData.name}
+            onChange={handleChange}
+            readOnly
+          />
           <label htmlFor="date">Select your date:</label>
           <input
             type="date"

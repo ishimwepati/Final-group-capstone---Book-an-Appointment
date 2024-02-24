@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { getMotorcycles } from '../../redux/motorcycleSlice';
 import NavigationPanel from '../NavigationPanel';
 import './Details.css';
@@ -13,27 +13,20 @@ const Details = () => {
 
   useEffect(() => {
     if (!currentUser) {
-      // Handle authentication if needed
       return;
     }
 
-    // Check if motorcycles are already loaded, if not, fetch them
     if (motorcycles.length === 0) {
       dispatch(getMotorcycles(currentUser.token));
     }
   }, [currentUser, dispatch, motorcycles]);
 
-  // Extract motorcycle ID from the URL
   const { pathname } = location;
   const motorcycleId = pathname.split('/details/')[1];
 
-  // Find the corresponding motorcycle using the ID
   const motorcycle = motorcycles.find((m) => m.id.toString() === motorcycleId);
 
-  // Log the motorcycle data to the console for debugging
-  useEffect(() => {
-    console.log('Motorcycle Data:', motorcycle);
-  }, [motorcycle]);
+  useEffect(() => {}, [motorcycle]);
 
   return (
     <>
@@ -59,9 +52,9 @@ const Details = () => {
               </tbody>
             </table>
           )}
-          <button type="button" className="reservation-button">
+          <Link to="/reserve" className="reservation-button">
             Make Reservation
-          </button>
+          </Link>
         </div>
       </div>
     </>

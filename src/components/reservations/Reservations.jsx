@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getUserReservations } from "../../redux/reserveSlice";
-import { getMotorcycles } from "../../redux/motorcycleSlice";
-import NavigationPanel from "../NavigationPanel";
-import "./Reservations.css";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getUserReservations } from '../../redux/reserveSlice';
+import { getMotorcycles } from '../../redux/motorcycleSlice';
+import NavigationPanel from '../NavigationPanel';
+import './Reservations.css';
 
 const Reservations = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -13,22 +13,23 @@ const Reservations = () => {
   const navigate = useNavigate();
   const authorization = useSelector((state) => state.user.requestHeader);
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         if (!currentUser) {
-          navigate("/login");
+          navigate('/login');
         } else {
           await dispatch(getUserReservations(currentUser.id));
           await dispatch(getMotorcycles(authorization));
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // Handle error
       }
     };
     fetchData();
-  }, [currentUser, dispatch, navigate]);
-  console.log("Reservations:", reservations);
+  }, [currentUser, dispatch, navigate, authorization]);
+
   return (
     <>
       <NavigationPanel />
@@ -46,11 +47,11 @@ const Reservations = () => {
             <tbody>
               {reservations.map((reservation) => {
                 const motorcycle = motorcycles.find(
-                  (m) => m.id === reservation.motorcycle_id
+                  (m) => m.id === reservation.motorcycle_id,
                 );
                 return (
                   <tr key={reservation.id}>
-                    <td>{motorcycle ? motorcycle.make : "Unknown"}</td>
+                    <td>{motorcycle ? motorcycle.make : 'Unknown'}</td>
                     <td>{reservation.city}</td>
                     <td>{reservation.reserve_date}</td>
                   </tr>

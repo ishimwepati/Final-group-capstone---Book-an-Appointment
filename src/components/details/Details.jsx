@@ -26,13 +26,9 @@ const Details = () => {
 
   const motorcycle = motorcycles.find((m) => m.id.toString() === motorcycleId);
 
-  useEffect(() => {
-    console.log('Motorcycle:', motorcycle);
-  }, [motorcycle]);
+  useEffect(() => {}, [motorcycle]);
 
-  const handleReservationClick = () => {
-    console.log('Make Reservation Clicked');
-  };
+  const handleReservationClick = () => {};
 
   return (
     <>

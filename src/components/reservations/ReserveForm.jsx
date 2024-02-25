@@ -89,6 +89,7 @@ const ReserveForm = () => {
             name="user_name"
             value={formData.user_name}
             readOnly
+            required
           />
           <label htmlFor="date">Select your date:</label>
           <input
@@ -97,6 +98,7 @@ const ReserveForm = () => {
             name="reserve_date"
             value={formData.reserve_date}
             onChange={handleChange}
+            required
           />
           <label htmlFor="time">Select your time:</label>
           <input
@@ -105,6 +107,7 @@ const ReserveForm = () => {
             name="reserve_time"
             value={formData.reserve_time}
             onChange={handleChange}
+            required
           />
           <label htmlFor="motorcycle">Select a motorcycle:</label>
           <select
@@ -112,6 +115,7 @@ const ReserveForm = () => {
             name="motorcycle_id"
             value={formData.motorcycle_id}
             onChange={handleChange}
+            required
           >
             <option value="">Select a motorcycle</option>
             {motorcycles.map((motorcycle) => (
@@ -129,6 +133,7 @@ const ReserveForm = () => {
             name="city"
             value={formData.city}
             onChange={handleChange}
+            required
           >
             <option value="">Select your city</option>
             <option value="Mawlamyaing">Mawlamyaing</option>

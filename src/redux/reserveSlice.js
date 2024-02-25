@@ -16,10 +16,10 @@ const addReservation = createAsyncThunk('create reservation', async (motorcycleD
   }
 });
 
-const getUserReservations = createAsyncThunk('getUserReservations', async (userId, { getState }) => {
+const getUserReservations = createAsyncThunk('getUserReservations', async (_, { getState }) => {
   try {
     const myToken = getState().user.currentUser.token;
-    const result = await axios.get(`http://localhost:3000/api/v1/reservations/${userId}`, {
+    const result = await axios.get('http://localhost:3000/api/v1/reservations', {
       headers: {
         Authorization: `Bearer ${myToken}`,
       },
@@ -46,7 +46,10 @@ const reserveSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getUserReservations.fulfilled, (state, action) => {
-        state.reserves = action.payload;
+        state.reserves = action.payload.data;
+      })
+      .addCase(getUserReservations.rejected, (state, action) => {
+        state.message = action.payload.message;
       });
   },
 });

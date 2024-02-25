@@ -60,7 +60,7 @@ const Reservations = () => {
             </tbody>
           </table>
         ) : (
-          <p>No reservations</p>
+          <p>No reservations found</p>
         )}
       </div>
     </>

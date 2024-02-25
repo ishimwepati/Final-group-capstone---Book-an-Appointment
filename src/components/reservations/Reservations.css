@@ -24,3 +24,8 @@
 .table th {
   background-color: #f8f9fa;
 }
+
+.reservations-container p {
+  margin: 5px;
+  font-size: 22px;
+}

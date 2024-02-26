@@ -34,12 +34,19 @@
 
 .motorcycle-item {
   width: 30%;
+  height: auto;
   border: 1px solid black;
   text-align: center;
+}
+
+.motorcycle-details img {
+  width: 28%;
+  height: 28%;
 }
 
 @media (max-width: 767px) {
   .motorcycle-item {
     width: 100%;
+    margin: 10px 0;
   }
 }

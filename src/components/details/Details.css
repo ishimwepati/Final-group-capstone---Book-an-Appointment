@@ -23,16 +23,13 @@
   border: 1px solid #ddddddd8;
   padding: 8px;
   text-align: left;
-}
-
-.table th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  font-weight: bold;
 }
 
 .reservation-button {
   display: block;
+  text-align: center;
+  font-size: 20px;
   margin-top: 15px;
   padding: 10px 12px;
   background-color: #97bf0f;
@@ -44,4 +41,5 @@
 
 .reservation-button:hover {
   background-color: #abda11;
+  text-decoration: none;
 }

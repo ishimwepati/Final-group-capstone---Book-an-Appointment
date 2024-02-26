@@ -1,6 +1,6 @@
 .delete-container {
   width: 80%;
-  height: 100vh;
+  height: auto;
   margin-left: 20%;
 }
 
@@ -22,6 +22,7 @@
   border-radius: 7px;
   margin: 12px 0;
   background-color: #fffb;
+  margin-bottom: 10px;
 }
 
 .delete-card p {

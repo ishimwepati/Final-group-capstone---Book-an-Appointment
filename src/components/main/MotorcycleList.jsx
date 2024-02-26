@@ -60,7 +60,7 @@ const MotorcycleList = () => {
                             <h3 className="motorcycle-name">
                               {motorcycle.make}
                             </h3>
-                            {motorcycle.image}
+                            <img src={motorcycle.image} alt={motorcycle.make} />
                           </div>
                         </Link>
                       )}

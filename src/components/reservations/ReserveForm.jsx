@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ReserveForm.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import NavigationPanel from '../NavigationPanel';
 import { addReservation } from '../../redux/reserveSlice';
 import { getMotorcycles } from '../../redux/motorcycleSlice';
@@ -11,6 +11,7 @@ const ReserveForm = () => {
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
   const authorization = useSelector((state) => state.user.requestHeader);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     if (authorization) {
@@ -18,12 +19,31 @@ const ReserveForm = () => {
     }
   }, [authorization, dispatch]);
 
+  const { state } = location;
+  const { userName, motorcycleName } = state || {};
+
   const [formData, setFormData] = useState({
+    user_name: userName || (currentUser ? currentUser.name : ''),
     reserve_date: '',
     motorcycle_id: '',
     city: '',
     reserve_time: '',
+    selectedMotorcycle: motorcycleName || '',
   });
+
+  useEffect(() => {
+    if (motorcycleName) {
+      const selectedMotorcycle = motorcycles.find(
+        (m) => m.make === motorcycleName,
+      );
+      if (selectedMotorcycle) {
+        setFormData((prevData) => ({
+          ...prevData,
+          motorcycle_id: String(selectedMotorcycle.id),
+        }));
+      }
+    }
+  }, [motorcycles, motorcycleName]);
 
   const [message, setMessage] = useState('');
 
@@ -62,6 +82,15 @@ const ReserveForm = () => {
         </p>
         {message && <p>{message}</p>}
         <form className="reservation-form" onSubmit={handleSubmit}>
+          <label htmlFor="user_name">Your Name:</label>
+          <input
+            type="text"
+            id="user_name"
+            name="user_name"
+            value={formData.user_name}
+            readOnly
+            required
+          />
           <label htmlFor="date">Select your date:</label>
           <input
             type="date"
@@ -69,6 +98,7 @@ const ReserveForm = () => {
             name="reserve_date"
             value={formData.reserve_date}
             onChange={handleChange}
+            required
           />
           <label htmlFor="time">Select your time:</label>
           <input
@@ -77,6 +107,7 @@ const ReserveForm = () => {
             name="reserve_time"
             value={formData.reserve_time}
             onChange={handleChange}
+            required
           />
           <label htmlFor="motorcycle">Select a motorcycle:</label>
           <select
@@ -84,7 +115,9 @@ const ReserveForm = () => {
             name="motorcycle_id"
             value={formData.motorcycle_id}
             onChange={handleChange}
+            required
           >
+            <option value="">Select a motorcycle</option>
             {motorcycles.map((motorcycle) => (
               <option key={motorcycle.id} value={motorcycle.id}>
                 {motorcycle.make}
@@ -100,6 +133,7 @@ const ReserveForm = () => {
             name="city"
             value={formData.city}
             onChange={handleChange}
+            required
           >
             <option value="">Select your city</option>
             <option value="Mawlamyaing">Mawlamyaing</option>

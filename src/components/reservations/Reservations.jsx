@@ -1,22 +1,67 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import './Reservations.css';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getUserReservations } from '../../redux/reserveSlice';
+import { getMotorcycles } from '../../redux/motorcycleSlice';
 import NavigationPanel from '../NavigationPanel';
+import './Reservations.css';
 
 const Reservations = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  if (!currentUser) return (<Navigate to="/login" />);
+  const dispatch = useDispatch();
+  const reservations = useSelector((state) => state.reserve.reserves);
+  const navigate = useNavigate();
+  const authorization = useSelector((state) => state.user.requestHeader);
+  const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (!currentUser) {
+          navigate('/login');
+        } else {
+          await dispatch(getUserReservations(currentUser.id));
+          await dispatch(getMotorcycles(authorization));
+        }
+      } catch (error) {
+        // Handle error
+      }
+    };
+    fetchData();
+  }, [currentUser, dispatch, navigate, authorization]);
+
   return (
     <>
       <NavigationPanel />
       <div className="reservations-container">
         <h2>My Reservations</h2>
-        <div className="row">
-          <p>Motorcycle name</p>
-          <p>City</p>
-          <p>Reserve date</p>
-        </div>
+        {reservations.length > 0 ? (
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Motorcycle Name</th>
+                <th>City</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reservations.map((reservation) => {
+                const motorcycle = motorcycles.find(
+                  (m) => m.id === reservation.motorcycle_id,
+                );
+                return (
+                  <tr key={reservation.id}>
+                    <td>{motorcycle ? motorcycle.make : 'Unknown'}</td>
+                    <td>{reservation.city}</td>
+                    <td>{reservation.reserve_date}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          <p>No reservations found</p>
+        )}
       </div>
     </>
   );

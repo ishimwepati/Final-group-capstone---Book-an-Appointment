@@ -16,6 +16,20 @@ const addReservation = createAsyncThunk('create reservation', async (motorcycleD
   }
 });
 
+const getUserReservations = createAsyncThunk('getUserReservations', async (_, { getState }) => {
+  try {
+    const myToken = getState().user.currentUser.token;
+    const result = await axios.get('http://localhost:3000/api/v1/reservations', {
+      headers: {
+        Authorization: `Bearer ${myToken}`,
+      },
+    });
+    return result.data;
+  } catch (error) {
+    return error.response.data;
+  }
+});
+
 const reserveSlice = createSlice({
   name: 'reserve',
   initialState: {
@@ -30,10 +44,15 @@ const reserveSlice = createSlice({
       })
       .addCase(addReservation.rejected, (state, action) => {
         state.message = action.payload.message;
+      })
+      .addCase(getUserReservations.fulfilled, (state, action) => {
+        state.reserves = action.payload.data;
+      })
+      .addCase(getUserReservations.rejected, (state, action) => {
+        state.message = action.payload.message;
       });
   },
-
 });
 
 export default reserveSlice.reducer;
-export { addReservation };
+export { addReservation, getUserReservations };

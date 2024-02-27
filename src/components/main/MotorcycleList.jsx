@@ -59,11 +59,11 @@ const MotorcycleList = () => {
                           <div className="motorcycle-details">
                             <h3 className="motorcycle-name">
                               {motorcycle.make}
-                            </h3> 
+                            </h3>
                             <div className="img-card"><img src={motorcycle.image} alt={motorcycle.make} /></div>
                             <h3 className="motorcycle-name">
                               {motorcycle.description}
-                            </h3> 
+                            </h3>
                           </div>
                         </Link>
                       )}

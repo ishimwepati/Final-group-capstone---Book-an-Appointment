@@ -22,7 +22,7 @@ const AddMotorcycle = () => {
 
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
-  
+
     if (name === 'image' && files && files[0]) {
       const reader = new FileReader();
       reader.onload = (e) => {

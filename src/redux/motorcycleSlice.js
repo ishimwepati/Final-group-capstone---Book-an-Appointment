@@ -61,8 +61,8 @@ const motorcycleSlice = createSlice({
       state.motorcycles = state.motorcycles.filter((m) => m.id !== action.payload);
     });
 
-    builder.addCase(addMotorcycle.fulfilled,(state, action) => {
-     state.motorcycles = action.payload.data;
+    builder.addCase(addMotorcycle.fulfilled, (state, action) => {
+      state.motorcycles = action.payload.data;
     });
   },
 });

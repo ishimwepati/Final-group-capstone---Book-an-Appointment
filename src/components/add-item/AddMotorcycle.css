@@ -1,0 +1,20 @@
+.motorcycle-list-container {
+    width: 80%;
+    height: 100vh;
+    margin-left: 20%;
+  }
+  
+  .motorcycle-list-container h2 {
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  .motorcycle-list-container form {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .motorcycle-list-container form button {
+    margin-bottom: 10px;
+  }

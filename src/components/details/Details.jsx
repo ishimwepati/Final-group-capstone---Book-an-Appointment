@@ -51,6 +51,14 @@ const Details = () => {
                   <td>Color</td>
                   <td>{motorcycle.color}</td>
                 </tr>
+                <tr>
+                  <td>License Plate</td>
+                  <td>{motorcycle.license_plate}</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td>{motorcycle.price}</td>
+                </tr>
               </tbody>
             </table>
           )}

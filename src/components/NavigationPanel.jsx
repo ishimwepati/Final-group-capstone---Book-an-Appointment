@@ -35,11 +35,6 @@ const NavigationPanel = () => (
             Delete Motorcycle
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/login" activeClassName="active">
-            Sign out
-          </NavLink>
-        </li>
       </ul>
       <div className="social-icons">
         <FaFacebook />

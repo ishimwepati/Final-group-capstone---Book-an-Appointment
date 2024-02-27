@@ -51,21 +51,26 @@ const Details = () => {
                   <td>Color</td>
                   <td>{motorcycle.color}</td>
                 </tr>
+                <tr>
+                  <td>License Plate</td>
+                  <td>{motorcycle.license_plate}</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td>{motorcycle.price}</td>
+                </tr>
               </tbody>
             </table>
           )}
-          <Link
-            to={{
-              pathname: '/reserve',
-              state: {
-                userName: currentUser.username,
-                motorcycleName: motorcycle ? motorcycle.make : '',
-              },
-            }}
-            className="reservation-button"
-          >
-            Make Reservation
-          </Link>
+          {motorcycle && (
+            <Link
+              to="/reserve"
+              state={{ motorcycleId: motorcycle.id }}
+              className="reservation-button"
+            >
+              Make Reservation
+            </Link>
+          )}
         </div>
       </div>
     </>

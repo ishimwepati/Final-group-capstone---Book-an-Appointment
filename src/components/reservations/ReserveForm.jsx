@@ -20,21 +20,20 @@ const ReserveForm = () => {
   }, [authorization, dispatch]);
 
   const { state } = location;
-  const { userName, motorcycleName } = state || {};
+  const { motorcycleId = '' } = state || {};
 
   const [formData, setFormData] = useState({
-    user_name: userName || (currentUser ? currentUser.name : ''),
+    user_name: currentUser.name,
     reserve_date: '',
-    motorcycle_id: '',
+    motorcycle_id: motorcycleId,
     city: '',
     reserve_time: '',
-    selectedMotorcycle: motorcycleName || '',
   });
 
   useEffect(() => {
-    if (motorcycleName) {
+    if (motorcycleId && motorcycles.length > 0) {
       const selectedMotorcycle = motorcycles.find(
-        (m) => m.make === motorcycleName,
+        (m) => m.id === Number(motorcycleId),
       );
       if (selectedMotorcycle) {
         setFormData((prevData) => ({
@@ -43,7 +42,7 @@ const ReserveForm = () => {
         }));
       }
     }
-  }, [motorcycles, motorcycleName]);
+  }, [motorcycles, motorcycleId]);
 
   const [message, setMessage] = useState('');
 
@@ -67,8 +66,6 @@ const ReserveForm = () => {
       });
   };
 
-  if (!currentUser) return <Navigate to="/login" />;
-
   return (
     <>
       <NavigationPanel />
@@ -89,7 +86,6 @@ const ReserveForm = () => {
             name="user_name"
             value={formData.user_name}
             readOnly
-            required
           />
           <label htmlFor="date">Select your date:</label>
           <input
@@ -98,7 +94,6 @@ const ReserveForm = () => {
             name="reserve_date"
             value={formData.reserve_date}
             onChange={handleChange}
-            required
           />
           <label htmlFor="time">Select your time:</label>
           <input
@@ -107,7 +102,6 @@ const ReserveForm = () => {
             name="reserve_time"
             value={formData.reserve_time}
             onChange={handleChange}
-            required
           />
           <label htmlFor="motorcycle">Select a motorcycle:</label>
           <select
@@ -115,9 +109,7 @@ const ReserveForm = () => {
             name="motorcycle_id"
             value={formData.motorcycle_id}
             onChange={handleChange}
-            required
           >
-            <option value="">Select a motorcycle</option>
             {motorcycles.map((motorcycle) => (
               <option key={motorcycle.id} value={motorcycle.id}>
                 {motorcycle.make}
@@ -133,7 +125,6 @@ const ReserveForm = () => {
             name="city"
             value={formData.city}
             onChange={handleChange}
-            required
           >
             <option value="">Select your city</option>
             <option value="Mawlamyaing">Mawlamyaing</option>

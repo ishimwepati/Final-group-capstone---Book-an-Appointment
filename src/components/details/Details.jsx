@@ -54,18 +54,15 @@ const Details = () => {
               </tbody>
             </table>
           )}
-          <Link
-            to={{
-              pathname: '/reserve',
-              state: {
-                userName: currentUser.username,
-                motorcycleName: motorcycle ? motorcycle.make : '',
-              },
-            }}
-            className="reservation-button"
-          >
-            Make Reservation
-          </Link>
+          {motorcycle && (
+            <Link
+              to="/reserve"
+              state={{ motorcycleId: motorcycle.id }}
+              className="reservation-button"
+            >
+              Make Reservation
+            </Link>
+          )}
         </div>
       </div>
     </>

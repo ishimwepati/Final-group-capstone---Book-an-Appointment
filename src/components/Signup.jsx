@@ -81,21 +81,6 @@ const Signup = () => {
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="role">Role</label>
-            <select
-              className="form-control"
-              id="role"
-              value={newUser.role}
-              onChange={(e) => {
-                setNewUser({ ...newUser, role: e.target.value });
-              }}
-            >
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-
           <div className="text-center">
             <button className="btn btn-primary" type="submit">
               Sign up

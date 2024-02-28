@@ -5,7 +5,6 @@ import MotorcycleList from './components/main/MotorcycleList';
 import AddMotorcycle from './components/main/AddMotorcycle';
 import Reservations from './components/reservations/Reservations';
 import Delete from './components/delete/Delete';
-import AddItem from './components/delete2/AddItem';
 import Details from './components/details/Details';
 import ReserveForm from './components/reservations/ReserveForm';
 import Signup from './components/Signup';

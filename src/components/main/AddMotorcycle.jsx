@@ -111,6 +111,16 @@ const AddMotorcycle = () => {
             required
           />
 
+          <label htmlFor="price">Price:</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            value={formData.price}
+            onChange={handleInputChange}
+            required
+          />
+
           <label htmlFor="image">Choose image:</label>
           <input
             type="file"
@@ -120,7 +130,9 @@ const AddMotorcycle = () => {
             onChange={handleInputChange}
           />
 
-          <button type="submit" disabled={loading}>{loading ? 'Adding...' : 'Add Motorcycle'}</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Adding...' : 'Add Motorcycle'}
+          </button>
         </form>
       </div>
     </>

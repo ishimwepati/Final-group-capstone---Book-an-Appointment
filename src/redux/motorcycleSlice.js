@@ -30,6 +30,21 @@ const deleteMotorcycle = createAsyncThunk('deleteMotorcycle', async (motorcycleI
   }
 });
 
+const addMotorcycle = createAsyncThunk('create motorcycle', async (motorcycleData, { getState }) => {
+  try {
+    const myToken = getState().user.currentUser.token;
+    const result = await axios.post('http://localhost:3000/api/v1/motorcycles', motorcycleData,
+      {
+        headers: {
+          Authorization: `Bearer ${myToken}`,
+        },
+      });
+    return result.data;
+  } catch (error) {
+    return error.response.data;
+  }
+});
+
 const motorcycleSlice = createSlice({
   name: 'motorcycle',
   initialState: {
@@ -45,8 +60,12 @@ const motorcycleSlice = createSlice({
     builder.addCase(deleteMotorcycle.fulfilled, (state, action) => {
       state.motorcycles = state.motorcycles.filter((m) => m.id !== action.payload);
     });
+
+    builder.addCase(addMotorcycle.fulfilled, (state, action) => {
+      state.motorcycles = action.payload.data;
+    });
   },
 });
 
 export default motorcycleSlice.reducer;
-export { getMotorcycles, deleteMotorcycle };
+export { getMotorcycles, deleteMotorcycle, addMotorcycle };

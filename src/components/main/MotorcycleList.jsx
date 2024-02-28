@@ -13,36 +13,21 @@ const MotorcycleList = () => {
   const motorcycles = useSelector((state) => state.motorcycle.motorcycles);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
     if (authorization) {
       dispatch(getMotorcycles(authorization));
     }
-
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 767);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, [authorization, dispatch]);
 
   if (!currentUser) return <Navigate to="/login" />;
 
   const handleLeftArrowClick = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - (isMobileView ? 1 : 3), 0));
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 3, 0));
   };
 
   const handleRightArrowClick = () => {
-    setCurrentIndex((prevIndex) => Math.min(
-      prevIndex + (isMobileView ? 1 : 3),
-      motorcycles.length - (isMobileView ? 1 : 3),
-    ));
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 3, motorcycles.length - 3));
   };
 
   return (
@@ -60,7 +45,7 @@ const MotorcycleList = () => {
             <ul className="motorcycle-list">
               {motorcycles
                 && motorcycles
-                  .slice(currentIndex, currentIndex + (isMobileView ? 1 : 3))
+                  .slice(currentIndex, currentIndex + 3)
                   .map((motorcycle) => (
                     <li key={motorcycle.id} className="motorcycle-item">
                       {motorcycle && (
@@ -75,12 +60,10 @@ const MotorcycleList = () => {
                             <h3 className="motorcycle-name">
                               {motorcycle.make}
                             </h3>
-                            <div className="img-card">
-                              <img
-                                src={motorcycle.image}
-                                alt={motorcycle.make}
-                              />
-                            </div>
+                            <div className="img-card"><img src={motorcycle.image} alt={motorcycle.make} /></div>
+                            <h3 className="motorcycle-name">
+                              {motorcycle.description}
+                            </h3>
                           </div>
                         </Link>
                       )}

@@ -68,7 +68,7 @@
 Our team of four used a special Kanban board to split up tasks and see how things were going. It helped us stay organized and keep track of our progress.
 
 - [Kanban Board](https://github.com/users/ishimwepati/projects/10/views/2)
-- [Initial state of your Kanban board](https://github.com/ishimwepati/Final-group-capstone---Book-an-Appointment/issues/10)
+- [Initial state of our Kanban board](https://github.com/ishimwepati/Final-group-capstone---Book-an-Appointment/issues/10)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

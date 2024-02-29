@@ -1,0 +1,45 @@
+.details-container {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+}
+
+.details-container h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.details-div {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td {
+  border: 1px solid #ddddddd8;
+  padding: 8px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.reservation-button {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px 12px;
+  background-color: #97bf0f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reservation-button:hover {
+  background-color: #abda11;
+  text-decoration: none;
+}

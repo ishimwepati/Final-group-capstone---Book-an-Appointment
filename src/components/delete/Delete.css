@@ -1,0 +1,45 @@
+.delete-container {
+  width: 80%;
+  height: auto;
+  margin-left: 20%;
+}
+
+.delete-container h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.delete-div {
+  margin: 0 15px;
+}
+
+.delete-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #97bf0f;
+  padding: 12px;
+  border-radius: 7px;
+  margin: 12px 0;
+  background-color: #fffb;
+  margin-bottom: 10px;
+}
+
+.delete-card p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.delete-button {
+  color: #fff;
+  font-size: 20px;
+  background-color: #d11a2a;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #a50b18;
+}

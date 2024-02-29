@@ -1,0 +1,31 @@
+.reservations-container {
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+}
+
+.reservations-container h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.reservations-container .table {
+  width: 70%;
+  margin: 20px auto;
+  border: 2px solid #97bf0f;
+  border-radius: 7px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #97bf0f;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.reservations-container p {
+  margin: 5px;
+  font-size: 22px;
+}

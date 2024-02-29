@@ -47,7 +47,8 @@ const AddMotorcycle = () => {
 
     try {
       await dispatch(addMotorcycle(formData));
-      window.URL = "/motorcycles"
+      window.location.href = '/motorcycles';
+      return;
     } catch (error) {
       setError('Failed to add motorcycle');
     } finally {

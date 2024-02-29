@@ -1,7 +1,13 @@
 .motorcycle-list-container {
-  width: 80%;
-  height: 100vh;
-  margin-left: 20%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 480px) {
+  .motorcycle-list-container {
+    width: 80%;
+    height: 100vh;
+    margin-left: 20%;
+  }
 }
 
 .motorcycle-list-container h2 {

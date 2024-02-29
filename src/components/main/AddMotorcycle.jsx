@@ -47,14 +47,7 @@ const AddMotorcycle = () => {
 
     try {
       await dispatch(addMotorcycle(formData));
-      setFormData({
-        make: '',
-        description: '',
-        color: '',
-        image: '',
-        license_plate: '',
-        price: 0,
-      });
+      window.URL = "/motorcycles"
     } catch (error) {
       setError('Failed to add motorcycle');
     } finally {

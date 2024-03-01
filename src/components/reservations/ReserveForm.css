@@ -4,10 +4,15 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  width: 80%;
   height: auto;
-  margin-left: 20%;
   background-color: #8fbc01;
+}
+
+@media screen and (max-width: 480px) {
+  .reserve-form-container {
+    width: 80%;
+    margin-left: 20%;
+  }
 }
 
 .reserve-form-container h2 {

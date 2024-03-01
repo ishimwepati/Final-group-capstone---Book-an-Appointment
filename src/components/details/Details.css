@@ -1,7 +1,13 @@
 .details-container {
-  width: 80%;
-  height: 100vh;
-  margin-left: 20%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 480px) {
+  .details-container {
+    width: 80%;
+    height: 100vh;
+    margin-left: 20%;
+  }
 }
 
 .details-container h2 {

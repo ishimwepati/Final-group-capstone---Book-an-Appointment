@@ -50,7 +50,7 @@ const AddMotorcycle = () => {
       window.location.href = '/motorcycles';
       return;
     } catch (error) {
-      setError('Failed to add motorcycle');
+      setError('Failed to add motorcycle ...');
     } finally {
       setLoading(false);
     }

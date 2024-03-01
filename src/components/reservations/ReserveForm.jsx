@@ -31,7 +31,7 @@ const ReserveForm = () => {
   });
 
   useEffect(() => {
-    if (motorcycleId && motorcycles.length > 0) {
+    if (motorcycleId && motorcycles && motorcycles.length > 0) {
       const selectedMotorcycle = motorcycles.find(
         (m) => m.id === Number(motorcycleId),
       );
@@ -110,14 +110,15 @@ const ReserveForm = () => {
             value={formData.motorcycle_id}
             onChange={handleChange}
           >
-            {motorcycles.map((motorcycle) => (
-              <option key={motorcycle.id} value={motorcycle.id}>
-                {motorcycle.make}
-                {' '}
-                -
-                {motorcycle.model}
-              </option>
-            ))}
+            {motorcycles
+              && motorcycles.map((motorcycle) => (
+                <option key={motorcycle.id} value={motorcycle.id}>
+                  {motorcycle.make}
+                  {' '}
+                  -
+                  {motorcycle.model}
+                </option>
+              ))}
           </select>
           <label htmlFor="city">Select your city:</label>
           <select
